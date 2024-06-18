@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passport Application Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            size: 16px;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -20,475 +34,848 @@
 </head>
 
 <body>
-    <div class="section">
-        <center>
-            <h1>Passport Application Form</h1>
+    <div class="container">
+        <div class="text-center mb-4">
+            <h1 class="text-primary">Passport Application Form</h1>
             <h3>Fresh Application</h3>
-        </center>
+        </div>
+        <form action="#" method="post">
+            <div class="section mb-4">
+                <h2 class="text-primary">1. Service Required</h2>
+                <div class="mb-3">
+                    <label class="form-label">1.1 Type of Application:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="normal" name="application_type" value="normal" class="form-check-input">
+                        <label for="normal" class="form-check-label">Normal</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="tatkaal" name="application_type" value="tatkaal"
+                            class="form-check-input">
+                        <label for="tatkaal" class="form-check-label">Tatkaal</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">1.2 Type of Passport Booklet:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="36_pages" name="booklet_type" value="36_pages" class="form-check-input">
+                        <label for="36_pages" class="form-check-label">36 Pages</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="60_pages" name="booklet_type" value="60_pages" class="form-check-input">
+                        <label for="60_pages" class="form-check-label">60 Pages</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">1.3 Validity Required:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="10_years" name="validity" value="10_years" class="form-check-input">
+                        <label for="10_years" class="form-check-label">10 Years</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="up_to_18" name="validity" value="up_to_18" class="form-check-input">
+                        <label for="up_to_18" class="form-check-label">Up to age 18</label>
+                    </div>
+                    <small>(For minors between 15 and 18 years)</small>
+                </div>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">2. Applicant Details</h2>
+                <div class="mb-3">
+                    <label for="given_name" class="form-label">2.1 Applicant's Given Name:</label>
+                    <input type="text" id="given_name" name="given_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">2.2 Surname:</label>
+                    <input type="text" id="surname" name="surname" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2.3 Are you known by any other names (aliases)?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="aliases_yes" name="aliases" value="yes" class="form-check-input">
+                        <label for="aliases_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="aliases_no" name="aliases" value="no" class="form-check-input">
+                        <label for="aliases_no" class="form-check-label">No</label>
+                    </div>
+                    <input type="text" id="aliases" name="aliases" class="form-control mt-2">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2.4 Have you ever changed your name?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="name_change_yes" name="name_change" value="yes"
+                            class="form-check-input">
+                        <label for="name_change_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="name_change_no" name="name_change" value="no" class="form-check-input">
+                        <label for="name_change_no" class="form-check-label">No</label>
+                    </div>
+                    <input type="text" id="name_change" name="name_change" class="form-control mt-2">
+                </div>
+                <div class="mb-3">
+                    <label for="dob" class="form-label">2.5 Date of Birth (DD-MM-YYYY):</label>
+                    <input type="date" id="dob" name="dob" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="place_of_birth" class="form-label">2.6 Place of Birth:</label>
+                    <input type="text" id="place_of_birth" name="place_of_birth" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="district" class="form-label">District (If born in India):</label>
+                    <input type="text" id="district" name="district" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="state_ut" class="form-label">State/UT (If born in India):</label>
+                    <input type="text" id="state_ut" name="state_ut" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Region/Country (If born abroad):</label>
+                    <input type="text" id="country" name="country" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2.7 Gender:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="male" name="gender" value="male" class="form-check-input">
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="female" name="gender" value="female" class="form-check-input">
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="transgender" name="gender" value="transgender" class="form-check-input">
+                        <label for="transgender" class="form-check-label">Transgender</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2.8 Marital Status:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="single" name="marital_status" value="single" class="form-check-input">
+                        <label for="single" class="form-check-label">Single</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="married" name="marital_status" value="married" class="form-check-input">
+                        <label for="married" class="form-check-label">Married</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="divorced" name="marital_status" value="divorced"
+                            class="form-check-input">
+                        <label for="divorced" class="form-check-label">Divorced</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="widow_widower" name="marital_status" value="widow_widower"
+                            class="form-check-input">
+                        <label for="widow_widower" class="form-check-label">Widow/Widower</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="separated" name="marital_status" value="separated"
+                            class="form-check-input">
+                        <label for="separated" class="form-check-label">Separated</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2.9 Citizenship of India by:</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="birth" name="citizenship" value="birth" class="form-check-input">
+                        <label for="birth" class="form-check-label">Birth</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="descent" name="citizenship" value="descent" class="form-check-input">
+                        <label for="descent" class="form-check-label">Descent</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="registration" name="citizenship" value="registration"
+                            class="form-check-input">
+                        <label for="registration" class="form-check-label">Registration</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="naturalization" name="citizenship" value="naturalization"
+                            class="form-check-input">
+                        <label for="naturalization" class="form-check-label">Naturalization</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="pan" class="form-label">2.10 PAN (If available):</label>
+                    <input type="text" id="pan" name="pan" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="voter_id" class="form-label">2.11 Voter ID (If available):</label>
+                    <input type="text" id="voter_id" name="voter_id" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="employment" class="form-label">2.12 Employment Type:</label><br>
+                <div class="form-check">
+                    <input type="radio" id="psu" name="employment" value="psu" class="form-check-input">
+                    <label for="psu" class="form-check-label">PSU</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="government" name="employment" value="government" class="form-check-input">
+                    <label for="government" class="form-check-label">Government</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="statutory_body" name="employment" value="statutory_body"
+                        class="form-check-input">
+                    <label for="statutory_body" class="form-check-label">Statutory Body</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="retired_gov_servant" name="employment" value="retired_gov_servant"
+                        class="form-check-input">
+                    <label for="retired_gov_servant" class="form-check-label">Retired Government Servant</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="self_employed" name="employment" value="self_employed"
+                        class="form-check-input">
+                    <label for="self_employed" class="form-check-label">Self Employed</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="private" name="employment" value="private" class="form-check-input">
+                    <label for="private" class="form-check-label">Private</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="homemaker" name="employment" value="homemaker" class="form-check-input">
+                    <label for="homemaker" class="form-check-label">Homemaker</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="not_employed" name="employment" value="not_employed"
+                        class="form-check-input">
+                    <label for="not_employed" class="form-check-label">Not Employed</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="retired_private" name="employment" value="retired_private"
+                        class="form-check-input">
+                    <label for="retired_private" class="form-check-label">Retired-Private Service</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="student" name="employment" value="student" class="form-check-input">
+                    <label for="student" class="form-check-label">Student</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="others" name="employment" value="others" class="form-check-input">
+                    <label for="others" class="form-check-label">Others</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="owners_partners" name="employment" value="owners_partners"
+                        class="form-check-input">
+                    <label for="owners_partners" class="form-check-label">Owners, Partners & Directors of companies
+                        which are members of CII, FICCI & ASSOCHAM</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="organization" class="form-label">2.13 If employed in Government/Statutory Body/PSU, specify
+                    organization name:</label>
+                <input type="text" id="organization" name="organization" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="gov_servant" class="form-label">2.14 Is either of your parent (in case of minor)/ spouse, a
+                    government servant?</label><br>
+                <div class="form-check">
+                    <input type="radio" id="gov_servant_yes" name="gov_servant" value="yes" class="form-check-input">
+                    <label for="gov_servant_yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="gov_servant_no" name="gov_servant" value="no" class="form-check-input">
+                    <label for="gov_servant_no" class="form-check-label">No</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="education" class="form-label">2.15 Educational Qualification:</label><br>
+                <div class="form-check">
+                    <input type="radio" id="7th_pass" name="education" value="7th_pass" class="form-check-input">
+                    <label for="7th_pass" class="form-check-label">7th Pass or Less</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="10th_pass" name="education" value="10th_pass" class="form-check-input">
+                    <label for="10th_pass" class="form-check-label">10th Pass</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="12th_pass" name="education" value="12th_pass" class="form-check-input">
+                    <label for="12th_pass" class="form-check-label">12th Pass</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="graduate" name="education" value="graduate" class="form-check-input">
+                    <label for="graduate" class="form-check-label">Graduate and above</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="non_ecr" class="form-label">2.16 Are you eligible for Non-ECR category?</label><br>
+                <div class="form-check">
+                    <input type="radio" id="non_ecr_yes" name="non_ecr" value="yes" class="form-check-input">
+                    <label for="non_ecr_yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="non_ecr_no" name="non_ecr" value="no" class="form-check-input">
+                    <label for="non_ecr_no" class="form-check-label">No</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="distinguishing_mark" class="form-label">2.17 Visible Distinguishing Mark:</label>
+                <input type="text" id="distinguishing_mark" name="distinguishing_mark" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="aadhaar" class="form-label">2.18 Aadhaar Number:</label>
+                <input type="text" id="aadhaar" name="aadhaar" class="form-control">
+            </div>
+            <div class="section mb-4">
+                <h2 class="text-primary">3. Family Details</h2>
+                <div class="mb-3">
+                    <label for="father_name" class="form-label">3.1 Father's Given Name:</label>
+                    <input type="text" id="father_name" name="father_name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="father_surname" class="form-label">Father's Surname:</label>
+                    <input type="text" id="father_surname" name="father_surname" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mother_name" class="form-label">3.2 Mother's Given Name:</label>
+                    <input type="text" id="mother_name" name="mother_name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mother_surname" class="form-label">Mother's Surname:</label>
+                    <input type="text" id="mother_surname" name="mother_surname" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="guardian_name" class="form-label">3.3 Legal Guardian's Given Name (If
+                        applicable):</label>
+                    <input type="text" id="guardian_name" name="guardian_name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="guardian_surname" class="form-label">Legal Guardian's Surname:</label>
+                    <input type="text" id="guardian_surname" name="guardian_surname" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="spouse_name" class="form-label">3.4 Spouse's Given Name:</label>
+                    <input type="text" id="spouse_name" name="spouse_name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="spouse_surname" class="form-label">Spouse's Surname:</label>
+                    <input type="text" id="spouse_surname" name="spouse_surname" class="form-control">
+                </div>
+
+                <label for="minor_details" class="form-label">3.5 If applicant is minor, provide following
+                    details:</label><br><br>
+
+                <div class="mb-3">
+                    <label for="father_passport" class="form-label">Father/ Legal Guardian's File/ Passport
+                        Number:</label>
+                    <input type="text" id="father_passport" name="father_passport" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="father_nationality" class="form-label">Father/ Legal Guardian's Nationality, if not
+                        Indian:</label>
+                    <input type="text" id="father_nationality" name="father_nationality" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mother_passport" class="form-label">Mother/ Legal Guardian's File/ Passport
+                        Number:</label>
+                    <input type="text" id="mother_passport" name="mother_passport" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mother_nationality" class="form-label">Mother/ Legal Guardian's Nationality, if not
+                        Indian:</label>
+                    <input type="text" id="mother_nationality" name="mother_nationality" class="form-control">
+                </div>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">4. Present Residential Address Details</h2>
+                <div class="mb-3">
+                    <label for="house_no" class="form-label">4.1 House No. and Street Name:</label>
+                    <input type="text" id="house_no" name="house_no" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="village_town_city" class="form-label">Village or Town or City:</label>
+                    <input type="text" id="village_town_city" name="village_town_city" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="district" class="form-label">District:</label>
+                    <input type="text" id="district" name="district" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="police_station" class="form-label">Police Station:</label>
+                    <input type="text" id="police_station" name="police_station" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="state_ut" class="form-label">State/ UT:</label>
+                    <input type="text" id="state_ut" name="state_ut" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pin" class="form-label">PIN:</label>
+                    <input type="text" id="pin" name="pin" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number:</label>
+                    <input type="text" id="mobile" name="mobile" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Telephone Number:</label>
+                    <input type="text" id="telephone" name="telephone" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email ID:</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emergency_contact" class="form-label">4.2 Is permanent address the same as present
+                        address?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="same_address_yes" name="same_address" value="yes"
+                            class="form-check-input">
+                        <label for="same_address_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="same_address_no" name="same_address" value="no"
+                            class="form-check-input">
+                        <label for="same_address_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <label class="form-label">4.3 Permanent Address (If different from above):</label><br>
+                <div class="mb-3">
+                    <label for="permanent_house_no" class="form-label">House No. and Street Name:</label>
+                    <input type="text" id="permanent_house_no" name="permanent_house_no" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_village_town_city" class="form-label">Village or Town or City:</label>
+                    <input type="text" id="permanent_village_town_city" name="permanent_village_town_city"
+                        class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_district" class="form-label">District:</label>
+                    <input type="text" id="permanent_district" name="permanent_district" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_police_station" class="form-label">Police Station:</label>
+                    <input type="text" id="permanent_police_station" name="permanent_police_station"
+                        class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_state_ut" class="form-label">State/ UT:</label>
+                    <input type="text" id="permanent_state_ut" name="permanent_state_ut" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_pin" class="form-label">PIN:</label>
+                    <input type="text" id="permanent_pin" name="permanent_pin" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_mobile" class="form-label">Mobile Number:</label>
+                    <input type="text" id="permanent_mobile" name="permanent_mobile" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_telephone" class="form-label">Telephone Number:</label>
+                    <input type="text" id="permanent_telephone" name="permanent_telephone" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="permanent_email" class="form-label">Email ID:</label>
+                    <input type="email" id="permanent_email" name="permanent_email" class="form-control">
+                </div>
+            </div>
+            <div class="section mb-4">
+                <h2 class="text-primary">5. Emergency Contact</h2>
+                <div class="mb-3">
+                    <label for="emergency_name" class="form-label">5.1 Name and Surname:</label>
+                    <input type="text" id="emergency_name" name="emergency_name" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emergency_address" class="form-label">5.2 Address:</label>
+                    <input type="text" id="emergency_address" name="emergency_address" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emergency_mobile" class="form-label">5.3 Mobile Number:</label>
+                    <input type="text" id="emergency_mobile" name="emergency_mobile" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emergency_email" class="form-label">5.4 Email ID:</label>
+                    <input type="email" id="emergency_email" name="emergency_email" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emergency_telephone" class="form-label">5.5 Telephone Number:</label>
+                    <input type="text" id="emergency_telephone" name="emergency_telephone" class="form-control">
+                </div>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">6. Previous Passport/Application Details</h2>
+                <h4>NA for Fresh Application</h4>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">7. Other Details</h2>
+
+                <div class="mb-3">
+                    <label>
+                        <h4>7.1 Provide the following details if there are any criminal proceedings pending against the
+                            applicant.</h4>
+                    </label><br>
+
+                    <label for="proceedings_yes" class="form-label">7.1.1 Are any proceedings in respect of an offence
+                        alleged to have been committed by you pending before a criminal court in India?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="proceedings_yes" name="proceedings" value="yes"
+                            class="form-check-input">
+                        <label for="proceedings_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="proceedings_no" name="proceedings" value="no" class="form-check-input">
+                        <label for="proceedings_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="summons_yes" class="form-label">7.1.2 Has any warrant or summons for your appearance
+                        been issued & pending before a court under any law for the time being in force?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="summons_yes" name="summons" value="yes" class="form-check-input">
+                        <label for="summons_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="summons_no" name="summons" value="no" class="form-check-input">
+                        <label for="summons_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="arrest_warrant_yes" class="form-label">7.1.3 Has a warrant for your arrest been issued
+                        by a court under any law for the time being in force?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="arrest_warrant_yes" name="arrest_warrant" value="yes"
+                            class="form-check-input">
+                        <label for="arrest_warrant_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="arrest_warrant_no" name="arrest_warrant" value="no"
+                            class="form-check-input">
+                        <label for="arrest_warrant_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="departure_prohibition_yes" class="form-label">7.1.4 Has an order prohibiting your
+                        departure from India been made by any court?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="departure_prohibition_yes" name="departure_prohibition" value="yes"
+                            class="form-check-input">
+                        <label for="departure_prohibition_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="departure_prohibition_no" name="departure_prohibition" value="no"
+                            class="form-check-input">
+                        <label for="departure_prohibition_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        <h4>7.2 Provide the following details if the applicant has been convicted by a court in India.
+                        </h4>
+                    </label><br>
+
+                    <label for="conviction_yes" class="form-label">7.2.1 Have you, at any time during the period of five
+                        years immediately preceding the date of this application, been convicted by a court in India for
+                        any offence involving moral turpitude and sentenced in respect thereof to imprisonment for not
+                        less than two years?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="conviction_yes" name="conviction" value="yes" class="form-check-input">
+                        <label for="conviction_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="conviction_no" name="conviction" value="no" class="form-check-input">
+                        <label for="conviction_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        <h4>7.3 Provide the following details if the applicant has been refused/denied passport.</h4>
+                    </label><br>
+
+                    <label for="refused_passport_yes" class="form-label">7.3.1 Have you ever been refused/denied
+                        passport?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="refused_passport_yes" name="refused_passport" value="yes"
+                            class="form-check-input">
+                        <label for="refused_passport_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="refused_passport_no" name="refused_passport" value="no"
+                            class="form-check-input">
+                        <label for="refused_passport_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passport_impounded_yes" class="form-label">7.3.2 Has your passport ever been
+                        impounded?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="passport_impounded_yes" name="passport_impounded" value="yes"
+                            class="form-check-input">
+                        <label for="passport_impounded_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="passport_impounded_no" name="passport_impounded" value="no"
+                            class="form-check-input">
+                        <label for="passport_impounded_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passport_revoked_yes" class="form-label">7.3.3 Has your passport ever been
+                        revoked?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="passport_revoked_yes" name="passport_revoked" value="yes"
+                            class="form-check-input">
+                        <label for="passport_revoked_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="passport_revoked_no" name="passport_revoked" value="no"
+                            class="form-check-input">
+                        <label for="passport_revoked_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        <h4>7.4 Provide the following details if applicant has applied for or been granted foreign
+                            citizenship.</h4>
+                    </label><br>
+
+                    <label for="foreign_citizenship_yes" class="form-label">7.4.1 Have you ever been granted citizenship
+                        by any other region/country?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="foreign_citizenship_yes" name="foreign_citizenship" value="yes"
+                            class="form-check-input">
+                        <label for="foreign_citizenship_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="foreign_citizenship_no" name="foreign_citizenship" value="no"
+                            class="form-check-input">
+                        <label for="foreign_citizenship_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="foreign_passport_yes" class="form-label">7.4.2 Have you ever held the passport of any
+                        other region/country at any time?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="foreign_passport_yes" name="foreign_passport" value="yes"
+                            class="form-check-input">
+                        <label for="foreign_passport_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="foreign_passport_no" name="foreign_passport" value="no"
+                            class="form-check-input">
+                        <label for="foreign_passport_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="surrendered_passport_yes" class="form-label">7.4.3 Have you ever surrendered your Indian
+                        passport?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="surrendered_passport_yes" name="surrendered_passport" value="yes"
+                            class="form-check-input">
+                        <label for="surrendered_passport_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="surrendered_passport_no" name="surrendered_passport" value="no"
+                            class="form-check-input">
+                        <label for="surrendered_passport_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="renunciation_yes" class="form-label">7.4.4 Have you ever applied for renunciation of
+                        Indian citizenship?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="renunciation_yes" name="renunciation" value="yes"
+                            class="form-check-input">
+                        <label for="renunciation_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="renunciation_no" name="renunciation" value="no"
+                            class="form-check-input">
+                        <label for="renunciation_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        <h4>7.5 Provide the following details if applicant has returned to India on Emergency
+                            Certificate.</h4>
+                    </label><br>
+
+                    <label for="emergency_certificate_yes" class="form-label">7.5.1 Have you ever returned to India on
+                        Emergency Certificate (EC)?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="emergency_certificate_yes" name="emergency_certificate" value="yes"
+                            class="form-check-input">
+                        <label for="emergency_certificate_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="emergency_certificate_no" name="emergency_certificate" value="no"
+                            class="form-check-input">
+                        <label for="emergency_certificate_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="deported_country_yes" class="form-label">7.5.2 Have you ever been deported from any
+                        country?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="deported_country_yes" name="deported_country" value="yes"
+                            class="form-check-input">
+                        <label for="deported_country_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="deported_country_no" name="deported_country" value="no"
+                            class="form-check-input">
+                        <label for="deported_country_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="repatriated_yes" class="form-label">7.5.3 Have you ever been repatriated from any
+                        country back to India?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="repatriated_yes" name="repatriated" value="yes"
+                            class="form-check-input">
+                        <label for="repatriated_yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="repatriated_no" name="repatriated" value="no" class="form-check-input">
+                        <label for="repatriated_no" class="form-check-label">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="section mb-4">
+                <h2 class="text-primary">8. Fee Payment</h2>
+                <h4>Visit Payment Screen</h4>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">9. Upload Documents</h2>
+
+                <div class="mb-3">
+                    <label for="proof_address" class="form-label">9.1 Upload Proof of Address:</label><br>
+                    <input type="file" id="proof_address" name="proof_address" accept=".pdf, .jpg, .jpeg, .png"
+                        class="form-control-file"><br>
+                    <small>(eg. Water Bill, Electricity Bill)</small><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="proof_dob" class="form-label">9.2 Upload Proof of Date of Birth:</label><br>
+                    <input type="file" id="proof_dob" name="proof_dob" accept=".pdf, .jpg, .jpeg, .png"
+                        class="form-control-file"><br>
+                    <small>(eg. Birth Certificate, School leaving certificate)</small><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="identity_proof" class="form-label">9.3 Upload Identity Proof:</label><br>
+                    <input type="file" id="identity_proof" name="identity_proof" accept=".pdf, .jpg, .jpeg, .png"
+                        class="form-control-file"><br>
+                    <small>(eg. Adhar card, Voter ID, PAN card)</small><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passport_photos" class="form-label">9.4 Upload Passport Size Photographs:</label><br>
+                    <input type="file" id="passport_photos" name="passport_photos" accept=".jpg, .jpeg, .png"
+                        class="form-control-file"><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="additional_documents" class="form-label">9.5 Upload Additional Documents for
+                        Minors:</label><br>
+                    <input type="file" id="additional_documents" name="additional_documents"
+                        accept=".pdf, .jpg, .jpeg, .png" class="form-control-file"><br><br>
+                </div>
+            </div>
+
+            <div class="section mb-4">
+                <h2 class="text-primary">10. Declaration</h2>
+                <p>I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired
+                    citizenship or travel document of any other country. I have not lost, surrendered or been deprived
+                    of
+                    the citizenship of India. I have not contravened any of the conditions relating to the possession
+                    and
+                    use of an Indian passport.<br>
+                    I affirm that the information and particulars given by me in this form are true and correct. I
+                    further
+                    state that I am not suppressing any material information in this regard. I further affirm that the
+                    enclosures and documentary proof submitted in support of my application for an Indian passport are
+                    authentic and solely pertain to me and I am fully responsible for the accuracy of the same. I am
+                    liable
+                    to be penalized or prosecuted if found otherwise. I am aware that under the Passports Act, 1967 it
+                    is a
+                    criminal offence to furnish any false information or to suppress any material information with a
+                    view to
+                    obtaining passport or travel document.<br>
+                    I have read and understood the contents of the above and by submitting this form certify that all
+                    the
+                    information submitted by me in the form is bonafide.</p>
+
+                <div class="mb-3">
+                    <label for="applicant_signature" class="form-label">Applicant's Signature:</label>
+                    <input type="text" id="applicant_signature" name="applicant_signature" required
+                        class="form-control"><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="place" class="form-label">Place:</label>
+                    <input type="text" id="place" name="place" required class="form-control"><br><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date (DD-MM-YYYY):</label>
+                    <input type="text" id="date" name="date" required class="form-control"><br><br>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary ml-2">Clear</button>
+            </div>
+        </form>
     </div>
-    <form action="#" method="post">
-        <div class="section">
-            <h2>1. Service Required</h2>
-            <label>1.1 Type of Application:</label><br>
-            <input type="radio" id="normal" name="application_type" value="normal">
-            <label for="normal">Normal</label><br>
-            <input type="radio" id="tatkaal" name="application_type" value="tatkaal">
-            <label for="tatkaal">Tatkaal</label><br><br>
-
-            <label>1.2 Type of Passport Booklet:</label><br>
-            <input type="radio" id="36_pages" name="booklet_type" value="36_pages">
-            <label for="36_pages">36 Pages</label><br>
-            <input type="radio" id="60_pages" name="booklet_type" value="60_pages">
-            <label for="60_pages">60 Pages</label><br><br>
-
-            <label>1.3 Validity Required:</label><br>
-            <input type="radio" id="10_years" name="validity" value="10_years">
-            <label for="10_years">10 Years</label><br>
-            <input type="radio" id="up_to_18" name="validity" value="up_to_18">
-            <label for="up_to_18">Up to age 18</label><br>
-            <small>(For minors between 15 and 18 years)</small><br><br>
-        </div>
-
-        <div class="section">
-            <h2>2. Applicant Details</h2>
-            <label for="given_name">2.1 Applicant's Given Name:</label>
-            <input type="text" id="given_name" name="given_name"><br><br>
-
-            <label for="surname">2.2 Surname:</label>
-            <input type="text" id="surname" name="surname"><br><br>
-
-            <label>2.3 Are you known by any other names (aliases)?</label><br>
-            <input type="radio" id="aliases_yes" name="aliases" value="yes">
-            <label for="aliases_yes">Yes</label><br>
-            <input type="radio" id="aliases_no" name="aliases" value="no">
-            <label for="aliases_no">No</label><br>
-            <input type="text" id="aliases" name="aliases"><br><br>
-
-            <label>2.4 Have you ever changed your name?</label><br>
-            <input type="radio" id="name_change_yes" name="name_change" value="yes">
-            <label for="name_change_yes">Yes</label><br>
-            <input type="radio" id="name_change_no" name="name_change" value="no">
-            <label for="name_change_no">No</label><br>
-            <input type="text" id="name_change" name="name_change"><br><br>
-
-            <label for="dob">2.5 Date of Birth (DD-MM-YYYY):</label>
-            <input type="date" id="dob" name="dob"><br><br>
-
-            <label for="place_of_birth">2.6 Place of Birth:</label>
-            <input type="text" id="place_of_birth" name="place_of_birth"><br><br>
-
-            <label for="district">District (If born in India):</label>
-            <input type="text" id="district" name="district"><br><br>
-
-            <label for="state_ut">State/UT (If born in India):</label>
-            <input type="text" id="state_ut" name="state_ut"><br><br>
-
-            <label for="country">Region/Country (If born abroad):</label>
-            <input type="text" id="country" name="country"><br><br>
-
-            <label for="gender">2.7 Gender:</label><br>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            <input type="radio" id="transgender" name="gender" value="transgender">
-            <label for="transgender">Transgender</label><br><br>
-
-            <label for="marital_status">2.8 Marital Status:</label><br>
-            <input type="radio" id="single" name="marital_status" value="single">
-            <label for="single">Single</label><br>
-            <input type="radio" id="married" name="marital_status" value="married">
-            <label for="married">Married</label><br>
-            <input type="radio" id="divorced" name="marital_status" value="divorced">
-            <label for="divorced">Divorced</label><br>
-            <input type="radio" id="widow_widower" name="marital_status" value="widow_widower">
-            <label for="widow_widower">Widow/Widower</label><br>
-            <input type="radio" id="separated" name="marital_status" value="separated">
-            <label for="separated">Separated</label><br><br>
-
-            <label for="citizenship">2.9 Citizenship of India by:</label><br>
-            <input type="radio" id="birth" name="citizenship" value="birth">
-            <label for="birth">Birth</label><br>
-            <input type="radio" id="descent" name="citizenship" value="descent">
-            <label for="descent">Descent</label><br>
-            <input type="radio" id="registration" name="citizenship" value="registration">
-            <label for="registration">Registration</label><br>
-            <input type="radio" id="naturalization" name="citizenship" value="naturalization">
-            <label for="naturalization">Naturalization</label><br><br>
-
-            <label for="pan">2.10 PAN (If available):</label>
-            <input type="text" id="pan" name="pan"><br><br>
-
-            <label for="voter_id">2.11 Voter ID (If available):</label>
-            <input type="text" id="voter_id" name="voter_id"><br><br>
-
-            <label for="employment">2.12 Employment Type:</label><br>
-            <input type="radio" id="psu" name="employment" value="psu">
-            <label for="psu">PSU</label><br>
-            <input type="radio" id="government" name="employment" value="government">
-            <label for="government">Government</label><br>
-            <input type="radio" id="statutory_body" name="employment" value="statutory_body">
-            <label for="statutory_body">Statutory Body</label><br>
-            <input type="radio" id="retired_gov_servant" name="employment" value="retired_gov_servant">
-            <label for="retired_gov_servant">Retired Government Servant</label><br>
-            <input type="radio" id="self_employed" name="employment" value="self_employed">
-            <label for="self_employed">Self Employed</label><br>
-            <input type="radio" id="private" name="employment" value="private">
-            <label for="private">Private</label><br>
-            <input type="radio" id="homemaker" name="employment" value="homemaker">
-            <label for="homemaker">Homemaker</label><br>
-            <input type="radio" id="not_employed" name="employment" value="not_employed">
-            <label for="not_employed">Not Employed</label><br>
-            <input type="radio" id="retired_private" name="employment" value="retired_private">
-            <label for="retired_private">Retired-Private Service</label><br>
-            <input type="radio" id="student" name="employment" value="student">
-            <label for="student">Student</label><br>
-            <input type="radio" id="others" name="employment" value="others">
-            <label for="others">Others</label><br>
-            <input type="radio" id="owners_partners" name="employment" value="owners_partners">
-            <label for="owners_partners">Owners, Partners & Directors of companies which are members of CII, FICCI &
-                ASSOCHAM</label><br><br>
-
-            <label for="organization">2.13 If employed in Government/Statutory Body/PSU, specify organization
-                name:</label>
-            <input type="text" id="organization" name="organization"><br><br>
-
-            <label for="gov_servant">2.14 Is either of your parent (in case of minor)/ spouse, a government
-                servant?</label><br>
-            <input type="radio" id="gov_servant_yes" name="gov_servant" value="yes">
-            <label for="gov_servant_yes">Yes</label><br>
-            <input type="radio" id="gov_servant_no" name="gov_servant" value="no">
-            <label for="gov_servant_no">No</label><br><br>
-
-
-            <label for="education">2.15 Educational Qualification:</label><br>
-            <input type="radio" id="7th_pass" name="education" value="7th_pass">
-            <label for="7th_pass">7th Pass or Less</label><br>
-            <input type="radio" id="10th_pass" name="education" value="10th_pass">
-            <label for="10th_pass">10th Pass</label><br>
-            <input type="radio" id="12th_pass" name="education" value="12th_pass">
-            <label for="12th_pass">12th Pass</label><br>
-            <input type="radio" id="graduate" name="education" value="graduate">
-            <label for="graduate">Graduate and above</label><br><br>
-
-            <label for="non_ecr">2.16 Are you eligible for Non-ECR category?</label><br>
-            <input type="radio" id="non_ecr_yes" name="non_ecr" value="yes">
-            <label for="non_ecr_yes">Yes</label><br>
-            <input type="radio" id="non_ecr_no" name="non_ecr" value="no">
-            <label for="non_ecr_no">No</label><br><br>
-
-            <label for="distinguishing_mark">2.17 Visible Distinguishing Mark:</label>
-            <input type="text" id="distinguishing_mark" name="distinguishing_mark"><br><br>
-
-            <label for="aadhaar">2.18 Aadhaar Number:</label>
-            <input type="text" id="aadhaar" name="aadhaar"><br><br>
-        </div>
-
-        <div class="section">
-            <h2>3. Family Details</h2>
-            <label for="father_name">3.1 Father's Given Name:</label>
-            <input type="text" id="father_name" name="father_name"><br><br>
-
-            <label for="father_surname">Father's Surname:</label>
-            <input type="text" id="father_surname" name="father_surname"><br><br>
-
-            <label for="mother_name">3.2 Mother's Given Name:</label>
-            <input type="text" id="mother_name" name="mother_name"><br><br>
-
-            <label for="mother_surname">Mother's Surname:</label>
-            <input type="text" id="mother_surname" name="mother_surname"><br><br>
-
-            <label for="guardian_name">3.3 Legal Guardian's Given Name (If applicable):</label>
-            <input type="text" id="guardian_name" name="guardian_name"><br><br>
-
-            <label for="guardian_surname">Legal Guardian's Surname:</label>
-            <input type="text" id="guardian_surname" name="guardian_surname"><br><br>
-
-            <label for="spouse_name">3.4 Spouse's Given Name:</label>
-            <input type="text" id="spouse_name" name="spouse_name"><br><br>
-
-            <label for="spouse_surname">Spouse's Surname:</label>
-            <input type="text" id="spouse_surname" name="spouse_surname"><br><br>
-
-            <label for="minor_details">3.5 If applicant is minor, provide following details:</label><br><br>
-
-            <label for="father_passport">Father/ Legal Guardian's File/ Passport Number:</label>
-            <input type="text" id="father_passport" name="father_passport"><br><br>
-
-            <label for="father_nationality">Father/ Legal Guardian's Nationality, if not Indian:</label>
-            <input type="text" id="father_nationality" name="father_nationality"><br><br>
-
-            <label for="mother_passport">Mother/ Legal Guardian's File/ Passport Number:</label>
-            <input type="text" id="mother_passport" name="mother_passport"><br><br>
-
-            <label for="mother_nationality">Mother/ Legal Guardian's Nationality, if not Indian:</label>
-            <input type="text" id="mother_nationality" name="mother_nationality"><br><br>
-        </div>
-
-        <div class="section">
-            <h2>4. Present Residential Address Details</h2>
-            <label for="house_no">4.1 House No. and Street Name:</label>
-            <input type="text" id="house_no" name="house_no"><br><br>
-
-            <label for="village_town_city">Village or Town or City:</label>
-            <input type="text" id="village_town_city" name="village_town_city"><br><br>
-
-            <label for="district">District:</label>
-            <input type="text" id="district" name="district"><br><br>
-
-            <label for="police_station">Police Station:</label>
-            <input type="text" id="police_station" name="police_station"><br><br>
-
-            <label for="state_ut">State/ UT:</label>
-            <input type="text" id="state_ut" name="state_ut"><br><br>
-
-            <label for="pin">PIN:</label>
-            <input type="text" id="pin" name="pin"><br><br>
-
-            <label for="mobile">Mobile Number:</label>
-            <input type="text" id="mobile" name="mobile"><br><br>
-
-            <label for="telephone">Telephone Number:</label>
-            <input type="text" id="telephone" name="telephone"><br><br>
-
-            <label for="email">Email ID:</label>
-            <input type="email" id="email" name="email"><br><br>
-
-            <label for="emergency_contact">4.2 Is permanent address the same as present address?</label><br>
-            <input type="radio" id="same_address_yes" name="same_address" value="yes">
-            <label for="same_address_yes">Yes</label><br>
-            <input type="radio" id="same_address_no" name="same_address" value="no">
-            <label for="same_address_no">No</label><br><br>
-
-            <label>4.3 Permanent Address (If different from above):</label><br>
-            <label for="permanent_house_no">House No. and Street Name:</label>
-            <input type="text" id="permanent_house_no" name="permanent_house_no"><br><br>
-
-            <label for="permanent_village_town_city">Village or Town or City:</label>
-            <input type="text" id="permanent_village_town_city" name="permanent_village_town_city"><br><br>
-
-            <label for="permanent_district">District:</label>
-            <input type="text" id="permanent_district" name="permanent_district"><br><br>
-
-            <label for="permanent_police_station">Police Station:</label>
-            <input type="text" id="permanent_police_station" name="permanent_police_station"><br><br>
-
-            <label for="permanent_state_ut">State/ UT:</label>
-            <input type="text" id="permanent_state_ut" name="permanent_state_ut"><br><br>
-
-            <label for="permanent_pin">PIN:</label>
-            <input type="text" id="permanent_pin" name="permanent_pin"><br><br>
-
-            <label for="permanent_mobile">Mobile Number:</label>
-            <input type="text" id="permanent_mobile" name="permanent_mobile"><br><br>
-
-            <label for="permanent_telephone">Telephone Number:</label>
-            <input type="text" id="permanent_telephone" name="permanent_telephone"><br><br>
-
-            <label for="permanent_email">Email ID:</label>
-            <input type="email" id="permanent_email" name="permanent_email"><br><br>
-        </div>
-
-        <div class="section">
-            <h2>5. Emergency Contact</h2>
-            <label for="emergency_name">5.1 Name and Surname:</label>
-            <input type="text" id="emergency_name" name="emergency_name"><br><br>
-
-            <label for="emergency_address">5.2 Address:</label>
-            <input type="text" id="emergency_address" name="emergency_address"><br><br>
-
-            <label for="emergency_mobile">5.3 Mobile Number:</label>
-            <input type="text" id="emergency_mobile" name="emergency_mobile"><br><br>
-
-            <label for="emergency_email">5.4 Email ID:</label>
-            <input type="email" id="emergency_email" name="emergency_email"><br><br>
-
-            <label for="emergency_telephone">5.5 Telephone Number:</label>
-            <input type="text" id="emergency_telephone" name="emergency_telephone"><br><br>
-        </div>
-
-        <div class="section">
-            <h2>6. Previous Passport/Application Details</h2>
-            <h4>NA for Fresh Application</h4>
-        </div>
-
-        <div class="section">
-            <h2>7. Other Details</h2>
-
-            <label>
-                <h4>7.1 Provide the following details if there are any criminal proceedings pending against the
-                    applicant.</h4>
-            </label><br>
-
-            <label>7.1.1 Are any proceedings in respect of an offence alleged to have been committed by you pending
-                before a criminal court in India?</label><br>
-            <input type="radio" id="proceedings_yes" name="proceedings" value="yes">
-            <label for="proceedings_yes">Yes</label><br>
-            <input type="radio" id="proceedings_no" name="proceedings" value="no">
-            <label for="proceedings_no">No</label><br><br>
-
-            <label>7.1.2 Has any warrant or summons for your appearance been issued & pending before a court under any
-                law for the time being in force?</label><br>
-            <input type="radio" id="summons_yes" name="summons" value="yes">
-            <label for="summons_yes">Yes</label><br>
-            <input type="radio" id="summons_no" name="summons" value="no">
-            <label for="summons_no">No</label><br><br>
-
-            <label>7.1.3 Has a warrant for your arrest been issued by a court under any law for the time being in
-                force?</label><br>
-            <input type="radio" id="arrest_warrant_yes" name="arrest_warrant" value="yes">
-            <label for="arrest_warrant_yes">Yes</label><br>
-            <input type="radio" id="arrest_warrant_no" name="arrest_warrant" value="no">
-            <label for="arrest_warrant_no">No</label><br><br>
-
-            <label>7.1.4 Has an order prohibiting your departure from India been made by any court?</label><br>
-            <input type="radio" id="departure_prohibition_yes" name="departure_prohibition" value="yes">
-            <label for="departure_prohibition_yes">Yes</label><br>
-            <input type="radio" id="departure_prohibition_no" name="departure_prohibition" value="no">
-            <label for="departure_prohibition_no">No</label><br><br>
-
-            <label>
-                <h4>7.2 Provide the following details if the applicant has been convicted by a court in
-                    India.</h4>
-            </label><br>
-
-            <label>7.2.1 Have you, at any time during the period of five years immediately preceding the date of this
-                application, been convicted by a court in India for any offence involving moral turpitude and sentenced
-                in respect thereof to imprisonment for not less than two years?</label><br>
-            <input type="radio" id="conviction_yes" name="conviction" value="yes">
-            <label for="conviction_yes">Yes</label><br>
-            <input type="radio" id="conviction_no" name="conviction" value="no">
-            <label for="conviction_no">No</label><br><br>
-
-            <label>
-                <h4>7.3 Provide the following details if the applicant has been refused/denied passport.</h4>
-            </label><br>
-
-            <label>7.3.1 Have you ever been refused/denied passport?</label><br>
-            <input type="radio" id="refused_passport_yes" name="refused_passport" value="yes">
-            <label for="refused_passport_yes">Yes</label><br>
-            <input type="radio" id="refused_passport_no" name="refused_passport" value="no">
-            <label for="refused_passport_no">No</label><br><br>
-
-            <label>7.3.2 Has your passport ever been impounded?</label><br>
-            <input type="radio" id="passport_impounded_yes" name="passport_impounded" value="yes">
-            <label for="passport_impounded_yes">Yes</label><br>
-            <input type="radio" id="passport_impounded_no" name="passport_impounded" value="no">
-            <label for="passport_impounded_no">No</label><br><br>
-
-            <label>7.3.3 Has your passport ever been revoked?</label><br>
-            <input type="radio" id="passport_revoked_yes" name="passport_revoked" value="yes">
-            <label for="passport_revoked_yes">Yes</label><br>
-            <input type="radio" id="passport_revoked_no" name="passport_revoked" value="no">
-            <label for="passport_revoked_no">No</label><br><br>
-
-            <label>
-                <h4>7.4 Provide the following details if applicant has applied for or been granted foreign
-                    citizenship.</h4>
-            </label><br>
-
-            <label>7.4.1 Have you ever been granted citizenship by any other region/country?</label><br>
-            <input type="radio" id="foreign_citizenship_yes" name="foreign_citizenship" value="yes">
-            <label for="foreign_citizenship_yes">Yes</label><br>
-            <input type="radio" id="foreign_citizenship_no" name="foreign_citizenship" value="no">
-            <label for="foreign_citizenship_no">No</label><br><br>
-
-            <label>7.4.2 Have you ever held the passport of any other region/country at any time?</label><br>
-            <input type="radio" id="foreign_passport_yes" name="foreign_passport" value="yes">
-            <label for="foreign_passport_yes">Yes</label><br>
-            <input type="radio" id="foreign_passport_no" name="foreign_passport" value="no">
-            <label for="foreign_passport_no">No</label><br><br>
-
-            <label>7.4.3 Have you ever surrendered your Indian passport?</label><br>
-            <input type="radio" id="surrendered_passport_yes" name="surrendered_passport" value="yes">
-            <label for="surrendered_passport_yes">Yes</label><br>
-            <input type="radio" id="surrendered_passport_no" name="surrendered_passport" value="no">
-            <label for="surrendered_passport_no">No</label><br><br>
-
-            <label>7.4.4 Have you ever applied for renunciation of Indian citizenship?</label><br>
-            <input type="radio" id="renunciation_yes" name="renunciation" value="yes">
-            <label for="renunciation_yes">Yes</label><br>
-            <input type="radio" id="renunciation_no" name="renunciation" value="no">
-            <label for="renunciation_no">No</label><br><br>
-
-            <label>
-                <h4>7.5 Provide the following details if applicant has returned to India on Emergency
-                    Certificate.</h4>
-            </label><br>
-
-            <label>7.5.1 Have you ever returned to India on Emergency Certificate (EC)?</label><br>
-            <input type="radio" id="emergency_certificate_yes" name="emergency_certificate" value="yes">
-            <label for="emergency_certificate_yes">Yes</label><br>
-            <input type="radio" id="emergency_certificate_no" name="emergency_certificate" value="no">
-            <label for="emergency_certificate_no">No</label><br><br>
-
-            <label>7.5.2 Have you ever been deported from any country?</label><br>
-            <input type="radio" id="deported_country_yes" name="deported_country" value="yes">
-            <label for="deported_country_yes">Yes</label><br>
-            <input type="radio" id="deported_country_no" name="deported_country" value="no">
-            <label for="deported_country_no">No</label><br><br>
-
-            <label>7.5.3 Have you ever been repatriated from any country back to India?</label><br>
-            <input type="radio" id="repatriated_yes" name="repatriated" value="yes">
-            <label for="repatriated_yes">Yes</label><br>
-            <input type="radio" id="repatriated_no" name="repatriated" value="no">
-            <label for="repatriated_no">No</label><br><br>
-
-        </div>
-        <div class="section">
-            <h2>8. Fee Payment</h2>
-            <h4>Visit Payment Screen</h4>
-        </div>
-        <div class="section">
-            <h2>9. Upload Documents</h2>
-            <label for="proof_address">9.1 Upload Proof of Address:</label><br>
-            <input type="file" id="proof_address" name="proof_address" accept=".pdf, .jpg, .jpeg, .png"><br>
-            <small>(eg. Water Bill, Electricity Bill)</small><br><br>
-
-            <label for="proof_dob">9.2 Upload Proof of Date of Birth:</label><br>
-            <input type="file" id="proof_dob" name="proof_dob" accept=".pdf, .jpg, .jpeg, .png"><br>
-            <small>(eg. Birth Certificate, School leaving certificate)</small><br><br>
-
-            <label for="identity_proof">9.3 Upload Identity Proof:</label><br>
-            <input type="file" id="identity_proof" name="identity_proof" accept=".pdf, .jpg, .jpeg, .png"><br>
-            <small>(eg. Adhar card, Voter ID, PAN card)</small><br><br>
-
-            <label for="passport_photos">9.4 Upload Passport Size Photographs:</label><br>
-            <input type="file" id="passport_photos" name="passport_photos" accept=".jpg, .jpeg, .png"><br><br>
-
-            <label for="additional_documents">9.5 Upload Additional Documents for Minors:</label><br>
-            <input type="file" id="additional_documents" name="additional_documents"
-                accept=".pdf, .jpg, .jpeg, .png"><br><br>
-        </div>
-
-        <div class="section">
-            <h2>10. Declaration</h2>
-            <p> I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired
-                citizenship or travel document of any other country. I have not lost, surrendered or been deprived of
-                the citizenship of India. I have not contravened any of the conditions relating to the possession and
-                use of an Indian passport.<br>
-                I affirm that the information and particulars given by me in this form are true and correct. I further
-                state that I am not suppressing any material information in this regard. I further affirm that the
-                enclosures and documentary proof submitted in support of my application for an Indian passport are
-                authentic and solely pertain to me and I am fully responsible for the accuracy of the same. I am liable
-                to be penalized or prosecuted if found otherwise. I am aware that under the Passports Act, 1967 it is a
-                criminal offence to furnish any false information or to suppress any material information with a view to
-                obtaining passport or travel document.<br>
-                I have read and understood the contents of the above and by submitting this form certify that all the
-                information submitted by me in the form is bonafide.</p>
-
-            <label for="applicant_signature">Applicant's Signature:</label>
-            <input type="text" id="applicant_signature" name="applicant_signature" required><br><br>
-
-            <label for="place">Place:</label>
-            <input type="text" id="place" name="place" required><br><br>
-
-            <label for="date">Date (DD-MM-YYYY):</label>
-            <input type="text" id="date" name="date" required><br><br>
-
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
